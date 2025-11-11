@@ -2,15 +2,17 @@
 
 using namespace std;
 
+template <typename Data>
 struct Node {
-    int data;
+    Data data;
     Node* next;
 };
 
+template <typename Data>
 class Queue {
 private:
-    Node *front;
-    Node *rear;
+    Node<Data> *front;
+    Node<Data> *rear;
     int size;
 public:
     Queue() {
@@ -20,9 +22,9 @@ public:
 
     int getSize() {return this->size;}
 
-    char getFront() {return front->data;}
+    int getFront() {return front->data;}
 
-    char getRear() {return rear->data;}
+    int getRear() {return rear->data;}
 
     void printQueue() {
 
@@ -31,7 +33,7 @@ public:
             return;
         }
 
-        Node *current;
+        Node<Data> *current;
         current = front;
 
         while (current != nullptr) {
@@ -45,7 +47,7 @@ public:
     }
 
     void enqueue(int data) {
-        Node *newNode = new Node{data, nullptr};
+        Node<Data> *newNode = new Node<Data>{data, nullptr};
 
         if(size == 0) front = rear = newNode;
         else {
@@ -57,7 +59,7 @@ public:
     }
 
     void dequeue() {
-        Node *temp;
+        Node<Data> *temp;
         temp = front;
 
         if(size == 0) {
