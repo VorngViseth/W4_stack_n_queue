@@ -22,9 +22,9 @@ public:
 
     int getSize() {return this->size;}
 
-    int getFront() {return front->data;}
+    Data getFront() {return front->data;}
 
-    int getRear() {return rear->data;}
+    Data getRear() {return rear->data;}
 
     void printQueue() {
 
@@ -46,7 +46,7 @@ public:
 
     }
 
-    void enqueue(int data) {
+    void enqueue(Data data) {
         Node<Data> *newNode = new Node<Data>{data, nullptr};
 
         if(size == 0) front = rear = newNode;

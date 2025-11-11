@@ -20,5 +20,23 @@ int main(){
 
     cout << queue.getFront() << endl;
 
+    Queue<char> charqueue;
+
+    charqueue.enqueue('c');
+    charqueue.enqueue('e');
+    charqueue.enqueue('a');
+    charqueue.enqueue('a');
+    charqueue.enqueue('d');
+
+
+    cout << charqueue.getFront() << endl;
+
+    charqueue.printQueue();
+
+    charqueue.dequeue();
+    charqueue.printQueue();
+
+    cout << charqueue.getFront() << endl;
+
 
 }
