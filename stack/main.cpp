@@ -1,18 +1,8 @@
-#include <iostream>
-#include <stack>
 #include "stack.cpp"
 using namespace std;
 
 int main(){
-
-string s="if[ao]";
-
- if(isBalanced(s)){
-    cout<<"OK";
- }
- else {
-    cout<<"Not balance";
- }
-
-    return 0;
-}
+    Stack<char> stack;
+    string n = "sjdklfjajsdf()()()()()";
+    cout<<stack.valid_parentheses(n);
+};
